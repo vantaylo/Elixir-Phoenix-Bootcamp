@@ -7,7 +7,7 @@ defmodule Parellel do
   The number of worker processes to use can be set with 'workers'.
   """
   @spec frequency([String.t()], pos_integer) :: map
-  def frequency(texts, workers) do
+  def frequency(texts, _workers) do
     texts
     |> get_all_elements()
     |> count_letters()
@@ -15,6 +15,8 @@ defmodule Parellel do
 
   defp get_all_elements(texts) do
     texts
+    |> Enum.join()
+    |> String.elements()
   end
 
   defp count_letters(elements) do
