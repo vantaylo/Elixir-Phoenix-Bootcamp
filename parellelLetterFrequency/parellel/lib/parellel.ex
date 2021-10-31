@@ -15,11 +15,22 @@ defmodule Parellel do
 
   defp get_all_elements(texts) do
     texts
+    # take all the strings and joins them together into one string
     |> Enum.join()
+    # then new string is passed to next function
+    # returns a list of all the individual characters in the string
     |> String.elements()
   end
 
   defp count_letters(elements) do
-    elements
+    Enum.reduce(elements, %{}, fn element, acc ->
+      nil
+      # if element is a letter
+      # downcase the letter
+      # increment the count of letter in acc
+
+      # else
+      # do nothing return acc
+    end)
   end
 end
