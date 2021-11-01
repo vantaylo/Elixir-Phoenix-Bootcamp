@@ -40,7 +40,7 @@ defmodule FrequencyTest do
     Frequency.frequency(texts, workers) |> Enum.sort() |> Enum.into(%{})
   end
 
-  # @tag :pending
+  @tag :pending
   test "no texts mean no letters" do
     assert freq([]) == %{}
   end
